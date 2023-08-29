@@ -1,0 +1,23 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+    <div class="p-2 w-50 bd-highlight">
+       <div class="input-group mb-3">
+          <span class="input-group-text">Gender</span>
+          <select class="form-select" [(ngModel)]="id">
+          <option>--Select--</option>
+          <option *ngFor="let gen of GenderList" [ngValue]="gen.id">
+          {{gen.description}}
+          </option>
+          </select>
+       </div>
+       <div class="input-group mb-3">
+          <span class="input-group-text">Description</span>
+          <input type="text" class="form-control" [(ngModel)]="description">
+       </div>
+    </div>
+ </div>
+ <button type="button" (click)="addGender()" *ngIf="gen.id=='0'" class="btn btn-primary">
+ Create
+ </button>
+ <button type="button" (click)="updateGender()" *ngIf="gen.id!='0'" class="btn btn-primary">
+ Update
+ </button>
