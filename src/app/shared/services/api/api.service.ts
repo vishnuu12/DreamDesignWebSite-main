@@ -68,7 +68,8 @@ export class ApiService {
   }
 
   deleteData(request: any) {
-    return this.http.delete(this.apiUrl + 'Gender/', request).pipe(
+    console.log(request);
+    return this.http.delete(this.apiUrl + 'Gender/' + request.id, request).pipe(
       tap((data) => { }),
 
       catchError((error: HttpErrorResponse) => {

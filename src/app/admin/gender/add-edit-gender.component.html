@@ -2,9 +2,9 @@
     <div class="p-2 w-50 bd-highlight">
        <div class="input-group mb-3">
           <span class="input-group-text">Gender</span>
-          <select class="form-select" [(ngModel)]="id">
+          <select class="form-select" [(ngModel)]="gender">
           <option>--Select--</option>
-          <option *ngFor="let gen of GenderList" [ngValue]="gen.id">
+          <option *ngFor="let gen of GenderList" [ngValue]="gen.gender">
           {{gen.description}}
           </option>
           </select>
@@ -15,9 +15,6 @@
        </div>
     </div>
  </div>
- <button type="button" (click)="addGender()" *ngIf="gen.id=='0'" class="btn btn-primary">
- Create
- </button>
- <button type="button" (click)="updateGender()" *ngIf="gen.id!='0'" class="btn btn-primary">
- Update
+ <button type="button" (click)="setGender()" class="btn btn-primary">
+ <span *ngIf="gen.id=='0'">Create</span> <span *ngIf="gen.id!='0'">Update</span>
  </button>

@@ -4,10 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GenderComponent } from './admin/gender/gender.component';
-import { ShowGenderComponent } from './admin/gender/show-gender/show-gender.component';
+import { ShowGenderComponent } from './admin/gender/show-gender.component';
 import { ApiService } from './shared/services/api/api.service';
 import { HttpClientModule } from '@angular/common/http';
-import { AddEditGenderComponent } from './admin/gender/add-edit-gender/add-edit-gender.component';
+import { AddEditGenderComponent } from './admin/gender/add-edit-gender.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({

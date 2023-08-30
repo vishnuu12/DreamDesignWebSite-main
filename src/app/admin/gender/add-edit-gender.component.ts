@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { ApiService } from "../../../shared/services/api/api.service";
+import { ApiService } from "../../shared/services/api/api.service";
 
 @Component({
   selector: "app-add-edit-gender",
@@ -28,37 +28,33 @@ export class AddEditGenderComponent implements OnInit {
     });
   }
 
-  addGender() {
+  setGender() {
     var val = {
       id: this.id,
       gender: this.gender,
       description: this.description,
     };
-
-    this.service.setData(val).subscribe((res) => {
-      alert("Added Successfully");
-    });
-  }
-
-  updateGender() {
-    var val = {
-      id: this.id,
-      gender: this.gender,
-      description: this.description,
-    };
-
-    this.service.upDateData(val).subscribe((res) => {
-      alert("Updated Successfully");
-    });
+    if(val.id=="0"){
+      this.service.setData(val).subscribe((res) => {
+        alert("Added Successfully");
+        this.loadGenderList();
+      });
+    }
+    else if(val.id!="0"){
+      this.service.upDateData(val).subscribe((res) => {
+        alert("Updated Successfully");
+        this.loadGenderList();
+      });
+    }
   }
 
   deleteGender() {
     var val = {
       id: this.id,
     };
-
     this.service.deleteData(val).subscribe((res) => {
       alert("Updated Successfully");
+      this.loadGenderList();
     });
   }
 }
